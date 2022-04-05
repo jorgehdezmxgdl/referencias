@@ -6,12 +6,6 @@ export default class App extends Component {
     this.state = {
        nombre : ''
     }
-    console.log("1")
-  }
-
-  componentDidMount() {
-    console.log("2")
-    this.a.oninput  = this.captura.bind(this)
   }
 
   captura(e) {
@@ -21,10 +15,9 @@ export default class App extends Component {
   }
 
   render() {
-    console.log("3")
     return (
       <div>
-        <input type="text" ref={(miko) => {this.a = miko}}  />
+        <input type="text" ref={(miko) => {this.a = miko}}  onChange={this.captura.bind(this)} />
         <p>{this.state.nombre}</p>
       </div>
     )
